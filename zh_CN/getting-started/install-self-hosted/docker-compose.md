@@ -95,7 +95,7 @@ FATAL:  no pg_hba.conf entry for host "172.19.0.7", user "postgres", database "d
 
 你应当修改db容器下的`/var/lib/postgresql/pgdata/pg_hba.conf`，添加对应你报错提示中的网段进入授权名单，例如
 ```bash
-docker exec -it docker-db-1 sh -c "echo 'host all all 172.21.0.0/16 trust' >> /var/lib/postgresql/data/pg_hba.conf"
+docker exec -it docker-db-1 sh -c "echo 'host all all 172.21.0.0/16 trust' >> /var/lib/postgresql/data/pgdata/pg_hba.conf"
 docker-compose restart
 ```
 
